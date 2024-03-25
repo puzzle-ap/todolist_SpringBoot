@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmln:th="www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TODOリスト</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <main>
+    <section id="todo" class="todo">
+      <div class="todo__wrapper">
+        <h2 class="todo__sectionTitle">Todoリスト ログイン</h2>
+        <p th:text="${errorMessage}" class="todo__errorMessage" />
+        <form action="" method="post" class="todo__form">
+          <section class="todo__item">
+            <label for="todo__userNameInput" class="todo__userNameLabel">ユーザー名</label>
+            <input type="text" name="userName" id="todo__userNameInput" th:value="${userName}" class="todo__userNameInput">
+          </section>
+          <section class="todo__item">
+            <label for="todo__passwordInput" class="todo__passwordLabel">パスワード</label>
+            <input type="password" name="password" id="todo__passwordInput" th:value="${password}" class="todo__passwordInput">
+          </section>
+          <button type="submit" class="todo__loginButton">ログイン</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

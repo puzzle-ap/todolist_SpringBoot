@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+/* ログインページ
+==============================================================================*/
+.todo {
+    padding: 100px 0;
+}
+
+.todo__wrapper {
+    margin: 0 auto;
+    padding: 50px 50px 20px;
+    max-width: 500px;
+    background-color: #e0ffff;
+}
+
+.todo__sectionTitle {
+    border-bottom: 3px solid #0000cd;
+    font-size: 3.5rem;
+}
+
+.todo__errorMessage {
+    color: red;
+}
+
+.todo__form {
+    padding: 20px 50px;
+}
+
+.todo__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.todo__item:last-of-type {
+    margin-bottom: 40px;
+}
+
+.todo__userNameLabel,
+.todo__passwordLabel {
+    width: 25%;
+}
+
+.todo__userNameInput,
+.todo__passwordInput {
+    width: 75%;
+}
+
+.todo__loginButton,
+.addTodo__submitButton {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 80px;
+    border: none;
+    background-color: #808080;
+    color: white;
+    cursor: pointer;
+}
+
+.todo__loginButton:hover,
+.addTodo__submitButton:hover {
+    opacity: .8;
+}
+
+/* マイページ
+==============================================================================*/
+.header {
+    padding: 50px 4%;
+}
+
+.header__wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+
+.header__logoutLink {
+    color: #000;
+    text-decoration: underline;
+}
+
+.header__logoutLink:hover {
+    opacity: 0.7;
+}
+
+/* Todoリストに追加
+==============================================================================*/
+.addTodo {
+    padding: 50px;
+}
+
+.addTodo__wrapper {
+    max-width: 1100px;
+    padding: 0 4%;
+    margin: 0 auto;
+}
+
+.addTodo__form {
+    background-color: #e0ffff;
+    padding: 30px 150px;
+}
+
+.addTodo__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.addTodo__todoLabel,
+.addTodo__deadlineLabel {
+    width: 10%;
+}
+
+.addTodo__todoInput {
+    width: 90%;
+}
+
+.addTodo__deadlineInput {
+    width: 30%;
+    margin-right: auto;
+}
+
+/* 送信ボタンについては.todo__loginButtonとまとめて記述 */
+
+/* Todoリスト
+==============================================================================*/
+.todoList__wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.todoList__item {
+    border: 2px solid #c0c0c0;
+    padding: 30px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todoList__itemLeftContent {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.todoList__deadline {
+    color: grey;
+}
+
+.todoList__completeButton {
+    cursor: pointer;
+}

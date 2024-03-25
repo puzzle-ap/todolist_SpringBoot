@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TODOリスト</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header id="header" class="header">
+    <div class="header__wrapper">
+      <h1 class="header__myPageTitle" th:text="${fullName} + 'のTodoリスト'" />
+      <a th:href="@{/todo/logout}" class="header__logoutLink">ログアウト</a>
+    </div>
+  </header>
+  <main>
+    <section id="addTodo" class="addTodo">
+      <div class="addTodo__wrapper">
+        <form th:action="@{/todo/addtodolist}" method="post" class="addTodo__form">
+          <section class="addTodo__item">
+            <label for="addTodo__todoInput" class="addTodo__todoLabel">TODO</label>
+            <input type="text" name="todo" id="addTodo__todoInput" class="addTodo__todoInput">
+          </section>
+          <section class="addTodo__item">
+            <label for="addTodo__deadlineInput" class="addTodo__deadlineLabel">期限</label>
+            <input type="date" name="deadline" id="addTodo__deadlineInput" class="addTodo__deadlineInput">
+          </section>
+          <input type="hidden" name="userId" th:value="${userId}">
+          <button type="submit" class="addTodo__submitButton">追加</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="todoList" class="todoList">
+      <div class="todoList__wrapper">
+        <section class="todoList__item" th:each="todoList, stat : ${todoLists}">
+          <section class="todoList__itemLeftContent">
+            <p class="todoList__number" th:text="${stat.count}" />
+            <section class="todoList__titleAndDeadline">
+              <p class="todoList__title" th:text="${todoList.todo}" />
+              <p class="todoList__deadline" th:text="'期限：' + ${#dates.format(todoList.deadline, 'yyyy-MM-dd')}" />
+            </section>
+          </section>
+          <th:block th:if="${todoList.completed == 1}">
+            <p class="todoList__completed">完了</p>
+          </th:block>
+          <th:block th:if="${todoList.completed == 0}">
+            <form th:action="@{/todo/complete}" method="post">
+              <input type="hidden" name="id" th:value="${todoList.id}">
+              <button type="submit" class="todoList__completeButton">完了にする</button>
+            </form>
+          </th:block>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="footer__wrapper">
+
+    </div>
+  </footer>
+</body>
+
+</html>
