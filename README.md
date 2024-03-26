@@ -1,2 +1,2 @@
 # todolist_SpringBoot
-Spring Bootで作ったTODOリスト
+Spring Bootを使用して作成したTODOリスト
